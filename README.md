@@ -1,6 +1,26 @@
 # Sistema_Experto
 
-Sistema experto en Python con interfaz por terminal. Incluye tres ejemplos independientes:
+Sistema experto en Python con interfaz por terminal. El proyecto está organizado por carpetas, una por cada ejemplo:
+
+- [medical/](medical) para diagnóstico médico.
+- [automotive/](automotive) para diagnóstico automotriz.
+- [credit/](credit) para aprobación de créditos.
+
+Cada carpeta incluye un script por cada parte del sistema:
+
+- [adquisicion_de_conocimiento.py](medical/adquisicion_de_conocimiento.py) o equivalente.
+- [base_de_conocimiento.py](medical/base_de_conocimiento.py) o equivalente.
+- [interfase_y_usuario.py](medical/interfase_y_usuario.py) o equivalente.
+- [base_de_hechos.py](medical/base_de_hechos.py) o equivalente.
+- [motor_de_inferencia.py](medical/motor_de_inferencia.py) o equivalente.
+- [main.py](medical/main.py) como punto de entrada del ejemplo.
+
+## Estructura General
+
+- [engine.py](engine.py) contiene el motor común y las utilidades compartidas.
+- [main.py](main.py) muestra un menú para elegir cualquiera de los tres casos.
+
+## Casos Disponibles
 
 - Diagnóstico médico para infecciones de garganta.
 - Diagnóstico automotriz para fallas de batería.
@@ -8,23 +28,23 @@ Sistema experto en Python con interfaz por terminal. Incluye tres ejemplos indep
 
 ## Ejecutar
 
+Menú general:
+
 ```bash
 python3 main.py
 ```
 
-También puedes abrir cada caso directamente:
+Ejecutar un caso directamente desde su carpeta:
 
 ```bash
-python3 medical.py
-python3 automotive.py
-python3 credit.py
+python3 medical/main.py
+python3 automotive/main.py
+python3 credit/main.py
 ```
 
-Si prefieres, `main.py` muestra un menú para elegir cualquiera de los tres casos.
+## Qué Hace
 
-## Qué hace
-
-El programa recopila hechos por medio de preguntas en consola, evalúa reglas de negocio y muestra:
+El sistema recopila hechos por medio de preguntas en consola, evalúa reglas de negocio y muestra:
 
 - La base de hechos actual.
 - La conclusión obtenida.
@@ -32,4 +52,4 @@ El programa recopila hechos por medio de preguntas en consola, evalúa reglas de
 
 ## Extender
 
-Para agregar un nuevo ejemplo, crea otro conjunto de reglas dentro de `main.py` siguiendo el mismo patrón de los tres escenarios actuales.
+Para agregar un nuevo ejemplo, crea una nueva carpeta con la misma estructura: adquisición, base de hechos, base de conocimiento, motor de inferencia, interfaz y usuario, y main. Si deseas integrarlo al menú principal, añade su constructor en [main.py](main.py).

@@ -2,7 +2,18 @@ from __future__ import annotations
 
 import argparse
 
-from engine import ask_yes_no, get_scenarios, print_header, run_scenario
+from automotive.main import construir_escenario as construir_escenario_automotriz
+from credit.main import construir_escenario as construir_escenario_credito
+from engine import ask_yes_no, print_header, run_scenario
+from medical.main import construir_escenario as construir_escenario_medico
+
+
+def get_scenarios():
+    return [
+        construir_escenario_medico(),
+        construir_escenario_automotriz(),
+        construir_escenario_credito(),
+    ]
 
 
 def choose_scenario() -> str | None:
