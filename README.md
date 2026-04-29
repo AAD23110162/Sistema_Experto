@@ -42,6 +42,19 @@ python3 automotive/main.py
 python3 credit/main.py
 ```
 
+Ejemplos rápidos (puedes usar `printf` para simular respuestas):
+
+```bash
+# Caso médico: temperatura 40°C, dolor de garganta sí, placas sí, tos no
+printf '40\ns\ns\nn\n' | python3 medical/main.py
+
+# Automotriz: Ford Fiesta, 11.5V, arranque hace clic, tablero parpadea
+printf 'Ford Fiesta\n11.5\ns\ns\n' | python3 automotive/main.py
+
+# Crédito: Juan Pérez, ingresos 25000, deudas 5000, sin atrasos
+printf 'Juan Pérez\n25000\n5000\nn\n' | python3 credit/main.py
+```
+
 ## Qué Hace
 
 El sistema recopila hechos por medio de preguntas en consola, evalúa reglas de negocio y muestra:
@@ -53,3 +66,14 @@ El sistema recopila hechos por medio de preguntas en consola, evalúa reglas de 
 ## Extender
 
 Para agregar un nuevo ejemplo, crea una nueva carpeta con la misma estructura: adquisición, base de hechos, base de conocimiento, motor de inferencia, interfaz y usuario, y main. Si deseas integrarlo al menú principal, añade su constructor en [main.py](main.py).
+
+## Notas de desarrollo
+
+- Los entry points dentro de cada carpeta están preparados para ejecutarse como scripts desde la raíz del proyecto (añaden dinámicamente la raíz al `sys.path`).
+- El proyecto usa solo la biblioteca estándar de Python; no requiere `requirements.txt` por ahora.
+- Recomendación: crear un entorno virtual y usar `python -m venv .venv` y `source .venv/bin/activate` antes de ejecutar.
+
+Si quieres, puedo:
+
+- Añadir tests unitarios (pytest) por carpeta.
+- Crear un `requirements.txt` y un pequeño `Makefile` o `scripts/run.sh`.
