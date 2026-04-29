@@ -133,15 +133,3 @@ Para agregar un nuevo ejemplo, crea una nueva carpeta con la misma estructura. C
 - Un archivo de interfase y usuario.
 - Un `main.py` propio.
 
-Si deseas integrarlo al menú principal, añade su constructor en [main.py](main.py).
-
-## Notas de desarrollo
-
-- Los entry points dentro de cada carpeta están preparados para ejecutarse como scripts desde la raíz del proyecto (añaden dinámicamente la raíz al `sys.path`).
-- El proyecto usa solo la biblioteca estándar de Python; no requiere `requirements.txt` por ahora.
-- Recomendación: crear un entorno virtual y usar `python -m venv .venv` y `source .venv/bin/activate` antes de ejecutar.
-
-Si quieres, puedo:
-
-- Añadir tests unitarios (pytest) por carpeta.
-- Crear un `requirements.txt` y un pequeño `Makefile` o `scripts/run.sh`.
